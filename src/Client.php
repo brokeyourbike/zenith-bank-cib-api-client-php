@@ -55,7 +55,7 @@ class Client
         return $this->config;
     }
 
-    public function fetch(string $reference): Response
+    public function fetch(string $reference): ?Response
     {
         $user = (new User())
             ->withCompanyCode($this->config->getCompanyCode())

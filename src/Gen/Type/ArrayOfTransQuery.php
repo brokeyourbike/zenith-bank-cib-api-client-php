@@ -18,7 +18,7 @@ class ArrayOfTransQuery
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery> $TransQuery
+     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery $TransQuery
      * @return static
      */
     public function withTransQuery(\BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery $TransQuery) : static
