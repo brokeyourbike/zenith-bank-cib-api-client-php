@@ -2,51 +2,53 @@
 
 namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 
-class FXTransaction
+use \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction;
+
+class FXTransaction extends Transaction
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $AdditionalInfo;
+    private ?string $AdditionalInfo;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryCity;
+    private ?string $BeneficiaryCity;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryCountry;
+    private ?string $BeneficiaryCountry;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryState;
+    private ?string $BeneficiaryState;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $ChargeOption;
+    private ?string $ChargeOption;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $PurposeCode;
+    private ?string $PurposeCode;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getAdditionalInfo()
+    public function getAdditionalInfo() : ?string
     {
         return $this->AdditionalInfo;
     }
 
     /**
-     * @param string $AdditionalInfo
-     * @return FXTransaction
+     * @param null | string $AdditionalInfo
+     * @return static
      */
-    public function withAdditionalInfo($AdditionalInfo)
+    public function withAdditionalInfo(?string $AdditionalInfo) : static
     {
         $new = clone $this;
         $new->AdditionalInfo = $AdditionalInfo;
@@ -55,18 +57,18 @@ class FXTransaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryCity()
+    public function getBeneficiaryCity() : ?string
     {
         return $this->BeneficiaryCity;
     }
 
     /**
-     * @param string $BeneficiaryCity
-     * @return FXTransaction
+     * @param null | string $BeneficiaryCity
+     * @return static
      */
-    public function withBeneficiaryCity($BeneficiaryCity)
+    public function withBeneficiaryCity(?string $BeneficiaryCity) : static
     {
         $new = clone $this;
         $new->BeneficiaryCity = $BeneficiaryCity;
@@ -75,18 +77,18 @@ class FXTransaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryCountry()
+    public function getBeneficiaryCountry() : ?string
     {
         return $this->BeneficiaryCountry;
     }
 
     /**
-     * @param string $BeneficiaryCountry
-     * @return FXTransaction
+     * @param null | string $BeneficiaryCountry
+     * @return static
      */
-    public function withBeneficiaryCountry($BeneficiaryCountry)
+    public function withBeneficiaryCountry(?string $BeneficiaryCountry) : static
     {
         $new = clone $this;
         $new->BeneficiaryCountry = $BeneficiaryCountry;
@@ -95,18 +97,18 @@ class FXTransaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryState()
+    public function getBeneficiaryState() : ?string
     {
         return $this->BeneficiaryState;
     }
 
     /**
-     * @param string $BeneficiaryState
-     * @return FXTransaction
+     * @param null | string $BeneficiaryState
+     * @return static
      */
-    public function withBeneficiaryState($BeneficiaryState)
+    public function withBeneficiaryState(?string $BeneficiaryState) : static
     {
         $new = clone $this;
         $new->BeneficiaryState = $BeneficiaryState;
@@ -115,18 +117,18 @@ class FXTransaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getChargeOption()
+    public function getChargeOption() : ?string
     {
         return $this->ChargeOption;
     }
 
     /**
-     * @param string $ChargeOption
-     * @return FXTransaction
+     * @param null | string $ChargeOption
+     * @return static
      */
-    public function withChargeOption($ChargeOption)
+    public function withChargeOption(?string $ChargeOption) : static
     {
         $new = clone $this;
         $new->ChargeOption = $ChargeOption;
@@ -135,18 +137,18 @@ class FXTransaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPurposeCode()
+    public function getPurposeCode() : ?string
     {
         return $this->PurposeCode;
     }
 
     /**
-     * @param string $PurposeCode
-     * @return FXTransaction
+     * @param null | string $PurposeCode
+     * @return static
      */
-    public function withPurposeCode($PurposeCode)
+    public function withPurposeCode(?string $PurposeCode) : static
     {
         $new = clone $this;
         $new->PurposeCode = $PurposeCode;

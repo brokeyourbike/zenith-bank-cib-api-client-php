@@ -4,19 +4,49 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 
 class Response
 {
-    private string $Description;
-    private string $ResponseCode;
-    private int $TotalFailed;
-    private int $TotalProcessed;
-    private int $TotalRecordReceived;
-    private \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail $Transactions;
+    /**
+     * @var null | string
+     */
+    private ?string $Description;
 
-    public function getDescription(): string
+    /**
+     * @var null | string
+     */
+    private ?string $ResponseCode;
+
+    /**
+     * @var null | int
+     */
+    private ?int $TotalFailed;
+
+    /**
+     * @var null | int
+     */
+    private ?int $TotalProcessed;
+
+    /**
+     * @var null | int
+     */
+    private ?int $TotalRecordReceived;
+
+    /**
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail
+     */
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail $Transactions;
+
+    /**
+     * @return null | string
+     */
+    public function getDescription() : ?string
     {
         return $this->Description;
     }
 
-    public function withDescription(string $Description): Response
+    /**
+     * @param null | string $Description
+     * @return static
+     */
+    public function withDescription(?string $Description) : static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -24,12 +54,19 @@ class Response
         return $new;
     }
 
-    public function getResponseCode(): string
+    /**
+     * @return null | string
+     */
+    public function getResponseCode() : ?string
     {
         return $this->ResponseCode;
     }
 
-    public function withResponseCode(string $ResponseCode): Response
+    /**
+     * @param null | string $ResponseCode
+     * @return static
+     */
+    public function withResponseCode(?string $ResponseCode) : static
     {
         $new = clone $this;
         $new->ResponseCode = $ResponseCode;
@@ -37,12 +74,19 @@ class Response
         return $new;
     }
 
-    public function getTotalFailed(): int
+    /**
+     * @return null | int
+     */
+    public function getTotalFailed() : ?int
     {
         return $this->TotalFailed;
     }
 
-    public function withTotalFailed(int $TotalFailed): Response
+    /**
+     * @param null | int $TotalFailed
+     * @return static
+     */
+    public function withTotalFailed(?int $TotalFailed) : static
     {
         $new = clone $this;
         $new->TotalFailed = $TotalFailed;
@@ -50,12 +94,19 @@ class Response
         return $new;
     }
 
-    public function getTotalProcessed(): int
+    /**
+     * @return null | int
+     */
+    public function getTotalProcessed() : ?int
     {
         return $this->TotalProcessed;
     }
 
-    public function withTotalProcessed(int $TotalProcessed): Response
+    /**
+     * @param null | int $TotalProcessed
+     * @return static
+     */
+    public function withTotalProcessed(?int $TotalProcessed) : static
     {
         $new = clone $this;
         $new->TotalProcessed = $TotalProcessed;
@@ -63,12 +114,19 @@ class Response
         return $new;
     }
 
-    public function getTotalRecordReceived(): int
+    /**
+     * @return null | int
+     */
+    public function getTotalRecordReceived() : ?int
     {
         return $this->TotalRecordReceived;
     }
 
-    public function withTotalRecordReceived(int $TotalRecordReceived): Response
+    /**
+     * @param null | int $TotalRecordReceived
+     * @return static
+     */
+    public function withTotalRecordReceived(?int $TotalRecordReceived) : static
     {
         $new = clone $this;
         $new->TotalRecordReceived = $TotalRecordReceived;
@@ -76,12 +134,19 @@ class Response
         return $new;
     }
 
-    public function getTransactions(): \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail
+    /**
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail
+     */
+    public function getTransactions() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail
     {
         return $this->Transactions;
     }
 
-    public function withTransactions(\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail $Transactions): Response
+    /**
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail $Transactions
+     * @return static
+     */
+    public function withTransactions(?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransDetail $Transactions) : static
     {
         $new = clone $this;
         $new->Transactions = $Transactions;

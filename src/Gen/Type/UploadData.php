@@ -2,26 +2,28 @@
 
 namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 
-class UploadData
+use \BrokeYourBike\ZenithBankCIB\Gen\Type\GenericUploadData;
+
+class UploadData extends GenericUploadData
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction
      */
-    private $TransactionRequest;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction $TransactionRequest;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction
      */
-    public function getTransactionRequest()
+    public function getTransactionRequest() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction
     {
         return $this->TransactionRequest;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction $TransactionRequest
-     * @return UploadData
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction $TransactionRequest
+     * @return static
      */
-    public function withTransactionRequest($TransactionRequest)
+    public function withTransactionRequest(?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction $TransactionRequest) : static
     {
         $new = clone $this;
         $new->TransactionRequest = $TransactionRequest;

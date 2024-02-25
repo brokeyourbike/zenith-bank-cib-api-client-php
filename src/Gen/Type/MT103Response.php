@@ -5,33 +5,33 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class MT103Response
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $Description;
+    private ?string $Description;
 
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail
      */
-    private $MT103Detail;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail $MT103Detail;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $ResponseCode;
+    private ?string $ResponseCode;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDescription()
+    public function getDescription() : ?string
     {
         return $this->Description;
     }
 
     /**
-     * @param string $Description
-     * @return MT103Response
+     * @param null | string $Description
+     * @return static
      */
-    public function withDescription($Description)
+    public function withDescription(?string $Description) : static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -40,18 +40,18 @@ class MT103Response
     }
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail
      */
-    public function getMT103Detail()
+    public function getMT103Detail() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail
     {
         return $this->MT103Detail;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail $MT103Detail
-     * @return MT103Response
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail $MT103Detail
+     * @return static
      */
-    public function withMT103Detail($MT103Detail)
+    public function withMT103Detail(?\BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfMT103Detail $MT103Detail) : static
     {
         $new = clone $this;
         $new->MT103Detail = $MT103Detail;
@@ -60,18 +60,18 @@ class MT103Response
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getResponseCode()
+    public function getResponseCode() : ?string
     {
         return $this->ResponseCode;
     }
 
     /**
-     * @param string $ResponseCode
-     * @return MT103Response
+     * @param null | string $ResponseCode
+     * @return static
      */
-    public function withResponseCode($ResponseCode)
+    public function withResponseCode(?string $ResponseCode) : static
     {
         $new = clone $this;
         $new->ResponseCode = $ResponseCode;

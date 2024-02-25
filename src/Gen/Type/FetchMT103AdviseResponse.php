@@ -7,23 +7,23 @@ use Phpro\SoapClient\Type\ResultInterface;
 class FetchMT103AdviseResponse implements ResultInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response
      */
-    private $FetchMT103AdviseResult;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response $FetchMT103AdviseResult;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response
      */
-    public function getFetchMT103AdviseResult()
+    public function getFetchMT103AdviseResult() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response
     {
         return $this->FetchMT103AdviseResult;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response $FetchMT103AdviseResult
-     * @return FetchMT103AdviseResponse
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response $FetchMT103AdviseResult
+     * @return static
      */
-    public function withFetchMT103AdviseResult($FetchMT103AdviseResult)
+    public function withFetchMT103AdviseResult(?\BrokeYourBike\ZenithBankCIB\Gen\Type\MT103Response $FetchMT103AdviseResult) : static
     {
         $new = clone $this;
         $new->FetchMT103AdviseResult = $FetchMT103AdviseResult;

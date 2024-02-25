@@ -4,16 +4,34 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 
 class User
 {
-    private string $CompanyCode;
-    private string $Password;
-    private string $UserID;
+    /**
+     * @var null | string
+     */
+    private ?string $CompanyCode;
 
-    public function getCompanyCode(): string
+    /**
+     * @var null | string
+     */
+    private ?string $Password;
+
+    /**
+     * @var null | string
+     */
+    private ?string $UserID;
+
+    /**
+     * @return null | string
+     */
+    public function getCompanyCode() : ?string
     {
         return $this->CompanyCode;
     }
 
-    public function withCompanyCode(string $CompanyCode): User
+    /**
+     * @param null | string $CompanyCode
+     * @return static
+     */
+    public function withCompanyCode(?string $CompanyCode) : static
     {
         $new = clone $this;
         $new->CompanyCode = $CompanyCode;
@@ -21,12 +39,19 @@ class User
         return $new;
     }
 
-    public function getPassword(): string
+    /**
+     * @return null | string
+     */
+    public function getPassword() : ?string
     {
         return $this->Password;
     }
 
-    public function withPassword(string $Password): User
+    /**
+     * @param null | string $Password
+     * @return static
+     */
+    public function withPassword(?string $Password) : static
     {
         $new = clone $this;
         $new->Password = $Password;
@@ -34,12 +59,19 @@ class User
         return $new;
     }
 
-    public function getUserID(): string
+    /**
+     * @return null | string
+     */
+    public function getUserID() : ?string
     {
         return $this->UserID;
     }
 
-    public function withUserID(string $UserID): User
+    /**
+     * @param null | string $UserID
+     * @return static
+     */
+    public function withUserID(?string $UserID) : static
     {
         $new = clone $this;
         $new->UserID = $UserID;

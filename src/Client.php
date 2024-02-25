@@ -7,10 +7,13 @@
 namespace BrokeYourBike\ZenithBankCIB;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Psr\Http\Client\ClientInterface;
-use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
+use Soap\Psr18Transport\Psr18Transport;
+use Soap\ExtSoapEngine\ExtSoapOptions as ExtSoapEngineExtSoapOptions;
+use Phpro\SoapClient\Soap\DefaultEngineFactory;
+use Phpro\SoapClient\Caller\EventDispatchingCaller;
+use Phpro\SoapClient\Caller\EngineCaller;
+use Http\Adapter\Guzzle7\Client as GuzzleAdapter;
+use GuzzleHttp\ClientInterface;
 use BrokeYourBike\ZenithBankCIB\Interfaces\ConfigInterface;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\User;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery;
@@ -36,15 +39,15 @@ class Client
     {
         $this->config = $config;
 
-        $httpHandle = HttPlugHandle::createForClient($httpClient);
-
-        $engine = ExtSoapEngineFactory::fromOptionsWithHandler(
-            ExtSoapOptions::defaults($this->config->getWsdl(), [])
-                ->withClassMap(SoapClassmap::getCollection()),
-            $httpHandle
+        $engine = DefaultEngineFactory::create(
+            ExtSoapEngineExtSoapOptions::defaults($this->config->getWsdl(), [])->withClassMap(SoapClassmap::getCollection()),
+            Psr18Transport::createForClient(new GuzzleAdapter($httpClient)),
         );
 
-        $this->soap = new SoapClient($engine, new EventDispatcher());
+        $eventDispatcher = new EventDispatcher();
+        $caller = new EventDispatchingCaller(new EngineCaller($engine), $eventDispatcher);
+
+        $this->soap = new SoapClient($caller);
     }
 
     public function getConfig(): ConfigInterface

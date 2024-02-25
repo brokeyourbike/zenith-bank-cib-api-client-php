@@ -7,23 +7,23 @@ use Phpro\SoapClient\Type\ResultInterface;
 class FetchBulkDebitRequestResponse implements ResultInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    private $FetchBulkDebitRequestResult;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchBulkDebitRequestResult;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    public function getFetchBulkDebitRequestResult()
+    public function getFetchBulkDebitRequestResult() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response
     {
         return $this->FetchBulkDebitRequestResult;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchBulkDebitRequestResult
-     * @return FetchBulkDebitRequestResponse
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchBulkDebitRequestResult
+     * @return static
      */
-    public function withFetchBulkDebitRequestResult($FetchBulkDebitRequestResult)
+    public function withFetchBulkDebitRequestResult(?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchBulkDebitRequestResult) : static
     {
         $new = clone $this;
         $new->FetchBulkDebitRequestResult = $FetchBulkDebitRequestResult;

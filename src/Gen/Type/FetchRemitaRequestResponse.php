@@ -7,23 +7,23 @@ use Phpro\SoapClient\Type\ResultInterface;
 class FetchRemitaRequestResponse implements ResultInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    private $FetchRemitaRequestResult;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchRemitaRequestResult;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    public function getFetchRemitaRequestResult()
+    public function getFetchRemitaRequestResult() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response
     {
         return $this->FetchRemitaRequestResult;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchRemitaRequestResult
-     * @return FetchRemitaRequestResponse
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchRemitaRequestResult
+     * @return static
      */
-    public function withFetchRemitaRequestResult($FetchRemitaRequestResult)
+    public function withFetchRemitaRequestResult(?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $FetchRemitaRequestResult) : static
     {
         $new = clone $this;
         $new->FetchRemitaRequestResult = $FetchRemitaRequestResult;

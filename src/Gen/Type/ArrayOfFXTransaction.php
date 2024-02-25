@@ -5,23 +5,23 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class ArrayOfFXTransaction
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction
+     * @var null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction>
      */
-    private $FXTransaction;
+    private ?array $FXTransaction;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction
+     * @return null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction>
      */
-    public function getFXTransaction()
+    public function getFXTransaction() : ?array
     {
         return $this->FXTransaction;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction $FXTransaction
-     * @return ArrayOfFXTransaction
+     * @param null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\FXTransaction> $FXTransaction
+     * @return static
      */
-    public function withFXTransaction($FXTransaction)
+    public function withFXTransaction(?array $FXTransaction) : static
     {
         $new = clone $this;
         $new->FXTransaction = $FXTransaction;

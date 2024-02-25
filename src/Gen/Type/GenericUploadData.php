@@ -5,38 +5,38 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class GenericUploadData
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $BulkDebitReference;
+    private ?string $BulkDebitReference;
 
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\User
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\User
      */
-    private $ClientInfo;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\User $ClientInfo;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $MAC;
+    private ?string $MAC;
 
     /**
-     * @var bool
+     * @var null | bool
      */
-    private $UseSingleDebitMultipleCredit;
+    private ?bool $UseSingleDebitMultipleCredit;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBulkDebitReference()
+    public function getBulkDebitReference() : ?string
     {
         return $this->BulkDebitReference;
     }
 
     /**
-     * @param string $BulkDebitReference
-     * @return GenericUploadData
+     * @param null | string $BulkDebitReference
+     * @return static
      */
-    public function withBulkDebitReference($BulkDebitReference)
+    public function withBulkDebitReference(?string $BulkDebitReference) : static
     {
         $new = clone $this;
         $new->BulkDebitReference = $BulkDebitReference;
@@ -45,18 +45,18 @@ class GenericUploadData
     }
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\User
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\User
      */
-    public function getClientInfo()
+    public function getClientInfo() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\User
     {
         return $this->ClientInfo;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\User $ClientInfo
-     * @return GenericUploadData
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\User $ClientInfo
+     * @return static
      */
-    public function withClientInfo($ClientInfo)
+    public function withClientInfo(?\BrokeYourBike\ZenithBankCIB\Gen\Type\User $ClientInfo) : static
     {
         $new = clone $this;
         $new->ClientInfo = $ClientInfo;
@@ -65,18 +65,18 @@ class GenericUploadData
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getMAC()
+    public function getMAC() : ?string
     {
         return $this->MAC;
     }
 
     /**
-     * @param string $MAC
-     * @return GenericUploadData
+     * @param null | string $MAC
+     * @return static
      */
-    public function withMAC($MAC)
+    public function withMAC(?string $MAC) : static
     {
         $new = clone $this;
         $new->MAC = $MAC;
@@ -85,18 +85,18 @@ class GenericUploadData
     }
 
     /**
-     * @return bool
+     * @return null | bool
      */
-    public function getUseSingleDebitMultipleCredit()
+    public function getUseSingleDebitMultipleCredit() : ?bool
     {
         return $this->UseSingleDebitMultipleCredit;
     }
 
     /**
-     * @param bool $UseSingleDebitMultipleCredit
-     * @return GenericUploadData
+     * @param null | bool $UseSingleDebitMultipleCredit
+     * @return static
      */
-    public function withUseSingleDebitMultipleCredit($UseSingleDebitMultipleCredit)
+    public function withUseSingleDebitMultipleCredit(?bool $UseSingleDebitMultipleCredit) : static
     {
         $new = clone $this;
         $new->UseSingleDebitMultipleCredit = $UseSingleDebitMultipleCredit;

@@ -5,128 +5,128 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class Transaction
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $Amount;
+    private ?string $Amount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryAccount;
+    private ?string $BeneficiaryAccount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryAddress;
+    private ?string $BeneficiaryAddress;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryBankCode;
+    private ?string $BeneficiaryBankCode;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryBankSortCode;
+    private ?string $BeneficiaryBankSortCode;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryCategory;
+    private ?string $BeneficiaryCategory;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryCode;
+    private ?string $BeneficiaryCode;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryEmail;
+    private ?string $BeneficiaryEmail;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryMobile;
+    private ?string $BeneficiaryMobile;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryName;
+    private ?string $BeneficiaryName;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BeneficiaryPhone;
+    private ?string $BeneficiaryPhone;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $ContractDate;
+    private ?string $ContractDate;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $ContractNo;
+    private ?string $ContractNo;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $DebitAccount;
+    private ?string $DebitAccount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $DebitAccountName;
+    private ?string $DebitAccountName;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $DebitCurrency;
+    private ?string $DebitCurrency;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $InvoiceNumber;
+    private ?string $InvoiceNumber;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $PaymentCurrency;
+    private ?string $PaymentCurrency;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $PaymentMethod;
+    private ?string $PaymentMethod;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $PaymentType;
+    private ?string $PaymentType;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $Payment_Due_Date;
+    private ?string $Payment_Due_Date;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $TransactionRef;
+    private ?string $TransactionRef;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getAmount()
+    public function getAmount() : ?string
     {
         return $this->Amount;
     }
 
     /**
-     * @param string $Amount
-     * @return Transaction
+     * @param null | string $Amount
+     * @return static
      */
-    public function withAmount($Amount)
+    public function withAmount(?string $Amount) : static
     {
         $new = clone $this;
         $new->Amount = $Amount;
@@ -135,18 +135,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryAccount()
+    public function getBeneficiaryAccount() : ?string
     {
         return $this->BeneficiaryAccount;
     }
 
     /**
-     * @param string $BeneficiaryAccount
-     * @return Transaction
+     * @param null | string $BeneficiaryAccount
+     * @return static
      */
-    public function withBeneficiaryAccount($BeneficiaryAccount)
+    public function withBeneficiaryAccount(?string $BeneficiaryAccount) : static
     {
         $new = clone $this;
         $new->BeneficiaryAccount = $BeneficiaryAccount;
@@ -155,18 +155,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryAddress()
+    public function getBeneficiaryAddress() : ?string
     {
         return $this->BeneficiaryAddress;
     }
 
     /**
-     * @param string $BeneficiaryAddress
-     * @return Transaction
+     * @param null | string $BeneficiaryAddress
+     * @return static
      */
-    public function withBeneficiaryAddress($BeneficiaryAddress)
+    public function withBeneficiaryAddress(?string $BeneficiaryAddress) : static
     {
         $new = clone $this;
         $new->BeneficiaryAddress = $BeneficiaryAddress;
@@ -175,18 +175,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryBankCode()
+    public function getBeneficiaryBankCode() : ?string
     {
         return $this->BeneficiaryBankCode;
     }
 
     /**
-     * @param string $BeneficiaryBankCode
-     * @return Transaction
+     * @param null | string $BeneficiaryBankCode
+     * @return static
      */
-    public function withBeneficiaryBankCode($BeneficiaryBankCode)
+    public function withBeneficiaryBankCode(?string $BeneficiaryBankCode) : static
     {
         $new = clone $this;
         $new->BeneficiaryBankCode = $BeneficiaryBankCode;
@@ -195,18 +195,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryBankSortCode()
+    public function getBeneficiaryBankSortCode() : ?string
     {
         return $this->BeneficiaryBankSortCode;
     }
 
     /**
-     * @param string $BeneficiaryBankSortCode
-     * @return Transaction
+     * @param null | string $BeneficiaryBankSortCode
+     * @return static
      */
-    public function withBeneficiaryBankSortCode($BeneficiaryBankSortCode)
+    public function withBeneficiaryBankSortCode(?string $BeneficiaryBankSortCode) : static
     {
         $new = clone $this;
         $new->BeneficiaryBankSortCode = $BeneficiaryBankSortCode;
@@ -215,18 +215,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryCategory()
+    public function getBeneficiaryCategory() : ?string
     {
         return $this->BeneficiaryCategory;
     }
 
     /**
-     * @param string $BeneficiaryCategory
-     * @return Transaction
+     * @param null | string $BeneficiaryCategory
+     * @return static
      */
-    public function withBeneficiaryCategory($BeneficiaryCategory)
+    public function withBeneficiaryCategory(?string $BeneficiaryCategory) : static
     {
         $new = clone $this;
         $new->BeneficiaryCategory = $BeneficiaryCategory;
@@ -235,18 +235,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryCode()
+    public function getBeneficiaryCode() : ?string
     {
         return $this->BeneficiaryCode;
     }
 
     /**
-     * @param string $BeneficiaryCode
-     * @return Transaction
+     * @param null | string $BeneficiaryCode
+     * @return static
      */
-    public function withBeneficiaryCode($BeneficiaryCode)
+    public function withBeneficiaryCode(?string $BeneficiaryCode) : static
     {
         $new = clone $this;
         $new->BeneficiaryCode = $BeneficiaryCode;
@@ -255,18 +255,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryEmail()
+    public function getBeneficiaryEmail() : ?string
     {
         return $this->BeneficiaryEmail;
     }
 
     /**
-     * @param string $BeneficiaryEmail
-     * @return Transaction
+     * @param null | string $BeneficiaryEmail
+     * @return static
      */
-    public function withBeneficiaryEmail($BeneficiaryEmail)
+    public function withBeneficiaryEmail(?string $BeneficiaryEmail) : static
     {
         $new = clone $this;
         $new->BeneficiaryEmail = $BeneficiaryEmail;
@@ -275,18 +275,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryMobile()
+    public function getBeneficiaryMobile() : ?string
     {
         return $this->BeneficiaryMobile;
     }
 
     /**
-     * @param string $BeneficiaryMobile
-     * @return Transaction
+     * @param null | string $BeneficiaryMobile
+     * @return static
      */
-    public function withBeneficiaryMobile($BeneficiaryMobile)
+    public function withBeneficiaryMobile(?string $BeneficiaryMobile) : static
     {
         $new = clone $this;
         $new->BeneficiaryMobile = $BeneficiaryMobile;
@@ -295,18 +295,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryName()
+    public function getBeneficiaryName() : ?string
     {
         return $this->BeneficiaryName;
     }
 
     /**
-     * @param string $BeneficiaryName
-     * @return Transaction
+     * @param null | string $BeneficiaryName
+     * @return static
      */
-    public function withBeneficiaryName($BeneficiaryName)
+    public function withBeneficiaryName(?string $BeneficiaryName) : static
     {
         $new = clone $this;
         $new->BeneficiaryName = $BeneficiaryName;
@@ -315,18 +315,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBeneficiaryPhone()
+    public function getBeneficiaryPhone() : ?string
     {
         return $this->BeneficiaryPhone;
     }
 
     /**
-     * @param string $BeneficiaryPhone
-     * @return Transaction
+     * @param null | string $BeneficiaryPhone
+     * @return static
      */
-    public function withBeneficiaryPhone($BeneficiaryPhone)
+    public function withBeneficiaryPhone(?string $BeneficiaryPhone) : static
     {
         $new = clone $this;
         $new->BeneficiaryPhone = $BeneficiaryPhone;
@@ -335,18 +335,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getContractDate()
+    public function getContractDate() : ?string
     {
         return $this->ContractDate;
     }
 
     /**
-     * @param string $ContractDate
-     * @return Transaction
+     * @param null | string $ContractDate
+     * @return static
      */
-    public function withContractDate($ContractDate)
+    public function withContractDate(?string $ContractDate) : static
     {
         $new = clone $this;
         $new->ContractDate = $ContractDate;
@@ -355,18 +355,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getContractNo()
+    public function getContractNo() : ?string
     {
         return $this->ContractNo;
     }
 
     /**
-     * @param string $ContractNo
-     * @return Transaction
+     * @param null | string $ContractNo
+     * @return static
      */
-    public function withContractNo($ContractNo)
+    public function withContractNo(?string $ContractNo) : static
     {
         $new = clone $this;
         $new->ContractNo = $ContractNo;
@@ -375,18 +375,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDebitAccount()
+    public function getDebitAccount() : ?string
     {
         return $this->DebitAccount;
     }
 
     /**
-     * @param string $DebitAccount
-     * @return Transaction
+     * @param null | string $DebitAccount
+     * @return static
      */
-    public function withDebitAccount($DebitAccount)
+    public function withDebitAccount(?string $DebitAccount) : static
     {
         $new = clone $this;
         $new->DebitAccount = $DebitAccount;
@@ -395,18 +395,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDebitAccountName()
+    public function getDebitAccountName() : ?string
     {
         return $this->DebitAccountName;
     }
 
     /**
-     * @param string $DebitAccountName
-     * @return Transaction
+     * @param null | string $DebitAccountName
+     * @return static
      */
-    public function withDebitAccountName($DebitAccountName)
+    public function withDebitAccountName(?string $DebitAccountName) : static
     {
         $new = clone $this;
         $new->DebitAccountName = $DebitAccountName;
@@ -415,18 +415,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDebitCurrency()
+    public function getDebitCurrency() : ?string
     {
         return $this->DebitCurrency;
     }
 
     /**
-     * @param string $DebitCurrency
-     * @return Transaction
+     * @param null | string $DebitCurrency
+     * @return static
      */
-    public function withDebitCurrency($DebitCurrency)
+    public function withDebitCurrency(?string $DebitCurrency) : static
     {
         $new = clone $this;
         $new->DebitCurrency = $DebitCurrency;
@@ -435,18 +435,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getInvoiceNumber()
+    public function getInvoiceNumber() : ?string
     {
         return $this->InvoiceNumber;
     }
 
     /**
-     * @param string $InvoiceNumber
-     * @return Transaction
+     * @param null | string $InvoiceNumber
+     * @return static
      */
-    public function withInvoiceNumber($InvoiceNumber)
+    public function withInvoiceNumber(?string $InvoiceNumber) : static
     {
         $new = clone $this;
         $new->InvoiceNumber = $InvoiceNumber;
@@ -455,18 +455,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPaymentCurrency()
+    public function getPaymentCurrency() : ?string
     {
         return $this->PaymentCurrency;
     }
 
     /**
-     * @param string $PaymentCurrency
-     * @return Transaction
+     * @param null | string $PaymentCurrency
+     * @return static
      */
-    public function withPaymentCurrency($PaymentCurrency)
+    public function withPaymentCurrency(?string $PaymentCurrency) : static
     {
         $new = clone $this;
         $new->PaymentCurrency = $PaymentCurrency;
@@ -475,18 +475,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPaymentMethod()
+    public function getPaymentMethod() : ?string
     {
         return $this->PaymentMethod;
     }
 
     /**
-     * @param string $PaymentMethod
-     * @return Transaction
+     * @param null | string $PaymentMethod
+     * @return static
      */
-    public function withPaymentMethod($PaymentMethod)
+    public function withPaymentMethod(?string $PaymentMethod) : static
     {
         $new = clone $this;
         $new->PaymentMethod = $PaymentMethod;
@@ -495,18 +495,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPaymentType()
+    public function getPaymentType() : ?string
     {
         return $this->PaymentType;
     }
 
     /**
-     * @param string $PaymentType
-     * @return Transaction
+     * @param null | string $PaymentType
+     * @return static
      */
-    public function withPaymentType($PaymentType)
+    public function withPaymentType(?string $PaymentType) : static
     {
         $new = clone $this;
         $new->PaymentType = $PaymentType;
@@ -515,18 +515,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPayment_Due_Date()
+    public function getPaymentDueDate() : ?string
     {
         return $this->Payment_Due_Date;
     }
 
     /**
-     * @param string $Payment_Due_Date
-     * @return Transaction
+     * @param null | string $Payment_Due_Date
+     * @return static
      */
-    public function withPayment_Due_Date($Payment_Due_Date)
+    public function withPaymentDueDate(?string $Payment_Due_Date) : static
     {
         $new = clone $this;
         $new->Payment_Due_Date = $Payment_Due_Date;
@@ -535,18 +535,18 @@ class Transaction
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getTransactionRef()
+    public function getTransactionRef() : ?string
     {
         return $this->TransactionRef;
     }
 
     /**
-     * @param string $TransactionRef
-     * @return Transaction
+     * @param null | string $TransactionRef
+     * @return static
      */
-    public function withTransactionRef($TransactionRef)
+    public function withTransactionRef(?string $TransactionRef) : static
     {
         $new = clone $this;
         $new->TransactionRef = $TransactionRef;

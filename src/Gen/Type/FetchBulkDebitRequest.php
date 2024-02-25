@@ -7,33 +7,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 class FetchBulkDebitRequest implements RequestInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq
      */
-    private $data;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data;
 
     /**
      * Constructor
      *
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data
      */
-    public function __construct($data)
+    public function __construct(?\BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data)
     {
         $this->data = $data;
     }
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq
      */
-    public function getData()
+    public function getData() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq
     {
         return $this->data;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data
-     * @return FetchBulkDebitRequest
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data
+     * @return static
      */
-    public function withData($data)
+    public function withData(?\BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq $data) : static
     {
         $new = clone $this;
         $new->data = $data;

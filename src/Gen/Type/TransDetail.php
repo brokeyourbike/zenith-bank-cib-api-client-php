@@ -5,53 +5,53 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class TransDetail
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $Amount;
+    private ?string $Amount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $Description;
+    private ?string $Description;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $PaymentStatus;
+    private ?string $PaymentStatus;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $ResponseCode;
+    private ?string $ResponseCode;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $TransactionRef;
+    private ?string $TransactionRef;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $VendorAccount;
+    private ?string $VendorAccount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $VendorBankCode;
+    private ?string $VendorBankCode;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getAmount()
+    public function getAmount() : ?string
     {
         return $this->Amount;
     }
 
     /**
-     * @param string $Amount
-     * @return TransDetail
+     * @param null | string $Amount
+     * @return static
      */
-    public function withAmount($Amount)
+    public function withAmount(?string $Amount) : static
     {
         $new = clone $this;
         $new->Amount = $Amount;
@@ -60,18 +60,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDescription()
+    public function getDescription() : ?string
     {
         return $this->Description;
     }
 
     /**
-     * @param string $Description
-     * @return TransDetail
+     * @param null | string $Description
+     * @return static
      */
-    public function withDescription($Description)
+    public function withDescription(?string $Description) : static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -80,18 +80,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getPaymentStatus()
+    public function getPaymentStatus() : ?string
     {
         return $this->PaymentStatus;
     }
 
     /**
-     * @param string $PaymentStatus
-     * @return TransDetail
+     * @param null | string $PaymentStatus
+     * @return static
      */
-    public function withPaymentStatus($PaymentStatus)
+    public function withPaymentStatus(?string $PaymentStatus) : static
     {
         $new = clone $this;
         $new->PaymentStatus = $PaymentStatus;
@@ -100,18 +100,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getResponseCode()
+    public function getResponseCode() : ?string
     {
         return $this->ResponseCode;
     }
 
     /**
-     * @param string $ResponseCode
-     * @return TransDetail
+     * @param null | string $ResponseCode
+     * @return static
      */
-    public function withResponseCode($ResponseCode)
+    public function withResponseCode(?string $ResponseCode) : static
     {
         $new = clone $this;
         $new->ResponseCode = $ResponseCode;
@@ -120,18 +120,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getTransactionRef()
+    public function getTransactionRef() : ?string
     {
         return $this->TransactionRef;
     }
 
     /**
-     * @param string $TransactionRef
-     * @return TransDetail
+     * @param null | string $TransactionRef
+     * @return static
      */
-    public function withTransactionRef($TransactionRef)
+    public function withTransactionRef(?string $TransactionRef) : static
     {
         $new = clone $this;
         $new->TransactionRef = $TransactionRef;
@@ -140,18 +140,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getVendorAccount()
+    public function getVendorAccount() : ?string
     {
         return $this->VendorAccount;
     }
 
     /**
-     * @param string $VendorAccount
-     * @return TransDetail
+     * @param null | string $VendorAccount
+     * @return static
      */
-    public function withVendorAccount($VendorAccount)
+    public function withVendorAccount(?string $VendorAccount) : static
     {
         $new = clone $this;
         $new->VendorAccount = $VendorAccount;
@@ -160,18 +160,18 @@ class TransDetail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getVendorBankCode()
+    public function getVendorBankCode() : ?string
     {
         return $this->VendorBankCode;
     }
 
     /**
-     * @param string $VendorBankCode
-     * @return TransDetail
+     * @param null | string $VendorBankCode
+     * @return static
      */
-    public function withVendorBankCode($VendorBankCode)
+    public function withVendorBankCode(?string $VendorBankCode) : static
     {
         $new = clone $this;
         $new->VendorBankCode = $VendorBankCode;

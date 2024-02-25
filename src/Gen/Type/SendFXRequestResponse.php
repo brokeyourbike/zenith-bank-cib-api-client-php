@@ -7,23 +7,23 @@ use Phpro\SoapClient\Type\ResultInterface;
 class SendFXRequestResponse implements ResultInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    private $SendFXRequestResult;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendFXRequestResult;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    public function getSendFXRequestResult()
+    public function getSendFXRequestResult() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response
     {
         return $this->SendFXRequestResult;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendFXRequestResult
-     * @return SendFXRequestResponse
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendFXRequestResult
+     * @return static
      */
-    public function withSendFXRequestResult($SendFXRequestResult)
+    public function withSendFXRequestResult(?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendFXRequestResult) : static
     {
         $new = clone $this;
         $new->SendFXRequestResult = $SendFXRequestResult;

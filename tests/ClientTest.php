@@ -21,9 +21,10 @@ class ClientTest extends TestCase
     /** @test */
     public function it_implemets_http_client_interface(): void
     {
-        /** @var ConfigInterface */
         $mockedConfig = $this->getMockBuilder(ConfigInterface::class)->getMock();
+        $mockedConfig->method('getWsdl')->willReturn('https://example.com?wsdl');
 
+        /** @var ConfigInterface $mockedConfig */
         $api = new Client($mockedConfig, new GuzzleHttpClient());
 
         $this->assertSame($mockedConfig, $api->getConfig());

@@ -5,23 +5,23 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class ArrayOfTransaction
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction
+     * @var null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction>
      */
-    private $Transaction;
+    private ?array $Transaction;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction
+     * @return null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction>
      */
-    public function getTransaction()
+    public function getTransaction() : ?array
     {
         return $this->Transaction;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction $Transaction
-     * @return ArrayOfTransaction
+     * @param null | array<int<0,max>, \BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction> $Transaction
+     * @return static
      */
-    public function withTransaction($Transaction)
+    public function withTransaction(?array $Transaction) : static
     {
         $new = clone $this;
         $new->Transaction = $Transaction;

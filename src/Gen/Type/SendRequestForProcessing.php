@@ -7,33 +7,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 class SendRequestForProcessing implements RequestInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData
      */
-    private $data;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data;
 
     /**
      * Constructor
      *
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data
      */
-    public function __construct($data)
+    public function __construct(?\BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data)
     {
         $this->data = $data;
     }
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData
      */
-    public function getData()
+    public function getData() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData
     {
         return $this->data;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data
-     * @return SendRequestForProcessing
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data
+     * @return static
      */
-    public function withData($data)
+    public function withData(?\BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData $data) : static
     {
         $new = clone $this;
         $new->data = $data;

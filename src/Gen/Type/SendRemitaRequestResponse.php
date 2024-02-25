@@ -7,23 +7,23 @@ use Phpro\SoapClient\Type\ResultInterface;
 class SendRemitaRequestResponse implements ResultInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    private $SendRemitaRequestResult;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendRemitaRequestResult;
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response
      */
-    public function getSendRemitaRequestResult()
+    public function getSendRemitaRequestResult() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response
     {
         return $this->SendRemitaRequestResult;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendRemitaRequestResult
-     * @return SendRemitaRequestResponse
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendRemitaRequestResult
+     * @return static
      */
-    public function withSendRemitaRequestResult($SendRemitaRequestResult)
+    public function withSendRemitaRequestResult(?\BrokeYourBike\ZenithBankCIB\Gen\Type\Response $SendRemitaRequestResult) : static
     {
         $new = clone $this;
         $new->SendRemitaRequestResult = $SendRemitaRequestResult;

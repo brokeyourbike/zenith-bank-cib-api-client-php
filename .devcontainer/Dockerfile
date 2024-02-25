@@ -1,17 +1,15 @@
 FROM mcr.microsoft.com/devcontainers/php:0-8.1
 
 RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    libxml2-dev
+    libxml2-dev \
+    libxslt-dev
 
 # install php extensions
 RUN docker-php-ext-install \
-    pdo \
-    pdo_mysql \
     xml \
-    zip \
+    xsl \
     bcmath \
-    pcntl \
+    intl \
     soap
 
 # disable xdebug

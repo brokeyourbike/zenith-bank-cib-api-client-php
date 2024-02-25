@@ -7,33 +7,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 class SendFXRequest implements RequestInterface
 {
     /**
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData
+     * @var null | \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData
      */
-    private $data;
+    private ?\BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data;
 
     /**
      * Constructor
      *
-     * @var \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data
      */
-    public function __construct($data)
+    public function __construct(?\BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data)
     {
         $this->data = $data;
     }
 
     /**
-     * @return \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData
+     * @return null | \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData
      */
-    public function getData()
+    public function getData() : ?\BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData
     {
         return $this->data;
     }
 
     /**
-     * @param \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data
-     * @return SendFXRequest
+     * @param null | \BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data
+     * @return static
      */
-    public function withData($data)
+    public function withData(?\BrokeYourBike\ZenithBankCIB\Gen\Type\FXUploadData $data) : static
     {
         $new = clone $this;
         $new->data = $data;

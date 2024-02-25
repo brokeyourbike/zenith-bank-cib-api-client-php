@@ -5,83 +5,83 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 class MT103Detail
 {
     /**
-     * @var string
+     * @var null | string
      */
-    private $AccountWithInstitution;
+    private ?string $AccountWithInstitution;
 
     /**
-     * @var float
+     * @var null | float
      */
-    private $Amount;
+    private ?float $Amount;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $BankOperationCode;
+    private ?string $BankOperationCode;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $Currency;
+    private ?string $Currency;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $DetailsOfCharges;
+    private ?string $DetailsOfCharges;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $IntermediaryInstitution;
+    private ?string $IntermediaryInstitution;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $OrderingCustomer;
+    private ?string $OrderingCustomer;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $Receiver;
+    private ?string $Receiver;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $RemittanceInformation;
+    private ?string $RemittanceInformation;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $SenderReference;
+    private ?string $SenderReference;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $SenderToReceiverInformation;
+    private ?string $SenderToReceiverInformation;
 
     /**
-     * @var string
+     * @var null | string
      */
-    private $Status;
+    private ?string $Status;
 
     /**
-     * @var \DateTimeInterface
+     * @var null | \DateTimeInterface
      */
-    private $ValueDate;
+    private ?\DateTimeInterface $ValueDate;
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getAccountWithInstitution()
+    public function getAccountWithInstitution() : ?string
     {
         return $this->AccountWithInstitution;
     }
 
     /**
-     * @param string $AccountWithInstitution
-     * @return MT103Detail
+     * @param null | string $AccountWithInstitution
+     * @return static
      */
-    public function withAccountWithInstitution($AccountWithInstitution)
+    public function withAccountWithInstitution(?string $AccountWithInstitution) : static
     {
         $new = clone $this;
         $new->AccountWithInstitution = $AccountWithInstitution;
@@ -90,18 +90,18 @@ class MT103Detail
     }
 
     /**
-     * @return float
+     * @return null | float
      */
-    public function getAmount()
+    public function getAmount() : ?float
     {
         return $this->Amount;
     }
 
     /**
-     * @param float $Amount
-     * @return MT103Detail
+     * @param null | float $Amount
+     * @return static
      */
-    public function withAmount($Amount)
+    public function withAmount(?float $Amount) : static
     {
         $new = clone $this;
         $new->Amount = $Amount;
@@ -110,18 +110,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getBankOperationCode()
+    public function getBankOperationCode() : ?string
     {
         return $this->BankOperationCode;
     }
 
     /**
-     * @param string $BankOperationCode
-     * @return MT103Detail
+     * @param null | string $BankOperationCode
+     * @return static
      */
-    public function withBankOperationCode($BankOperationCode)
+    public function withBankOperationCode(?string $BankOperationCode) : static
     {
         $new = clone $this;
         $new->BankOperationCode = $BankOperationCode;
@@ -130,18 +130,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getCurrency()
+    public function getCurrency() : ?string
     {
         return $this->Currency;
     }
 
     /**
-     * @param string $Currency
-     * @return MT103Detail
+     * @param null | string $Currency
+     * @return static
      */
-    public function withCurrency($Currency)
+    public function withCurrency(?string $Currency) : static
     {
         $new = clone $this;
         $new->Currency = $Currency;
@@ -150,18 +150,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getDetailsOfCharges()
+    public function getDetailsOfCharges() : ?string
     {
         return $this->DetailsOfCharges;
     }
 
     /**
-     * @param string $DetailsOfCharges
-     * @return MT103Detail
+     * @param null | string $DetailsOfCharges
+     * @return static
      */
-    public function withDetailsOfCharges($DetailsOfCharges)
+    public function withDetailsOfCharges(?string $DetailsOfCharges) : static
     {
         $new = clone $this;
         $new->DetailsOfCharges = $DetailsOfCharges;
@@ -170,18 +170,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getIntermediaryInstitution()
+    public function getIntermediaryInstitution() : ?string
     {
         return $this->IntermediaryInstitution;
     }
 
     /**
-     * @param string $IntermediaryInstitution
-     * @return MT103Detail
+     * @param null | string $IntermediaryInstitution
+     * @return static
      */
-    public function withIntermediaryInstitution($IntermediaryInstitution)
+    public function withIntermediaryInstitution(?string $IntermediaryInstitution) : static
     {
         $new = clone $this;
         $new->IntermediaryInstitution = $IntermediaryInstitution;
@@ -190,18 +190,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getOrderingCustomer()
+    public function getOrderingCustomer() : ?string
     {
         return $this->OrderingCustomer;
     }
 
     /**
-     * @param string $OrderingCustomer
-     * @return MT103Detail
+     * @param null | string $OrderingCustomer
+     * @return static
      */
-    public function withOrderingCustomer($OrderingCustomer)
+    public function withOrderingCustomer(?string $OrderingCustomer) : static
     {
         $new = clone $this;
         $new->OrderingCustomer = $OrderingCustomer;
@@ -210,18 +210,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getReceiver()
+    public function getReceiver() : ?string
     {
         return $this->Receiver;
     }
 
     /**
-     * @param string $Receiver
-     * @return MT103Detail
+     * @param null | string $Receiver
+     * @return static
      */
-    public function withReceiver($Receiver)
+    public function withReceiver(?string $Receiver) : static
     {
         $new = clone $this;
         $new->Receiver = $Receiver;
@@ -230,18 +230,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getRemittanceInformation()
+    public function getRemittanceInformation() : ?string
     {
         return $this->RemittanceInformation;
     }
 
     /**
-     * @param string $RemittanceInformation
-     * @return MT103Detail
+     * @param null | string $RemittanceInformation
+     * @return static
      */
-    public function withRemittanceInformation($RemittanceInformation)
+    public function withRemittanceInformation(?string $RemittanceInformation) : static
     {
         $new = clone $this;
         $new->RemittanceInformation = $RemittanceInformation;
@@ -250,18 +250,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getSenderReference()
+    public function getSenderReference() : ?string
     {
         return $this->SenderReference;
     }
 
     /**
-     * @param string $SenderReference
-     * @return MT103Detail
+     * @param null | string $SenderReference
+     * @return static
      */
-    public function withSenderReference($SenderReference)
+    public function withSenderReference(?string $SenderReference) : static
     {
         $new = clone $this;
         $new->SenderReference = $SenderReference;
@@ -270,18 +270,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getSenderToReceiverInformation()
+    public function getSenderToReceiverInformation() : ?string
     {
         return $this->SenderToReceiverInformation;
     }
 
     /**
-     * @param string $SenderToReceiverInformation
-     * @return MT103Detail
+     * @param null | string $SenderToReceiverInformation
+     * @return static
      */
-    public function withSenderToReceiverInformation($SenderToReceiverInformation)
+    public function withSenderToReceiverInformation(?string $SenderToReceiverInformation) : static
     {
         $new = clone $this;
         $new->SenderToReceiverInformation = $SenderToReceiverInformation;
@@ -290,18 +290,18 @@ class MT103Detail
     }
 
     /**
-     * @return string
+     * @return null | string
      */
-    public function getStatus()
+    public function getStatus() : ?string
     {
         return $this->Status;
     }
 
     /**
-     * @param string $Status
-     * @return MT103Detail
+     * @param null | string $Status
+     * @return static
      */
-    public function withStatus($Status)
+    public function withStatus(?string $Status) : static
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -310,18 +310,18 @@ class MT103Detail
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return null | \DateTimeInterface
      */
-    public function getValueDate()
+    public function getValueDate() : ?\DateTimeInterface
     {
         return $this->ValueDate;
     }
 
     /**
-     * @param \DateTimeInterface $ValueDate
-     * @return MT103Detail
+     * @param null | \DateTimeInterface $ValueDate
+     * @return static
      */
-    public function withValueDate($ValueDate)
+    public function withValueDate(?\DateTimeInterface $ValueDate) : static
     {
         $new = clone $this;
         $new->ValueDate = $ValueDate;

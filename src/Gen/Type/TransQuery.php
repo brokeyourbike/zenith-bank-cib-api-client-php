@@ -4,14 +4,24 @@ namespace BrokeYourBike\ZenithBankCIB\Gen\Type;
 
 class TransQuery
 {
-    private string $TransactionRef;
+    /**
+     * @var null | string
+     */
+    private ?string $TransactionRef;
 
-    public function getTransactionRef(): string
+    /**
+     * @return null | string
+     */
+    public function getTransactionRef() : ?string
     {
         return $this->TransactionRef;
     }
 
-    public function withTransactionRef(string $TransactionRef): TransQuery
+    /**
+     * @param null | string $TransactionRef
+     * @return static
+     */
+    public function withTransactionRef(?string $TransactionRef) : static
     {
         $new = clone $this;
         $new->TransactionRef = $TransactionRef;
