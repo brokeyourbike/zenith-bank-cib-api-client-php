@@ -1,10 +1,8 @@
 <?php
 
-// Copyright (C) 2023 Ivan Stasiuk <ivan@stasi.uk>.
-//
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this file,
-// You can obtain one at https://mozilla.org/MPL/2.0/.
+// Copyright (C) 2024 Ivan Stasiuk <ivan@stasi.uk>.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 
 namespace BrokeYourBike\ZenithBankCIB\Interfaces;
 
@@ -13,9 +11,8 @@ namespace BrokeYourBike\ZenithBankCIB\Interfaces;
  */
 interface ConfigInterface
 {
-    public function getUrl(): string;
+    public function getWsdl(): string;
+    public function getCompanyCode(): string;
     public function getUsername(): string;
     public function getPassword(): string;
-    public function getSourceAccountNumber(): string;
-    public function getSourceAccountName(): string;
 }

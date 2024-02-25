@@ -1,41 +1,50 @@
 <?php
 
-// Copyright (C) 2023 Ivan Stasiuk <ivan@stasi.uk>.
-//
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this file,
-// You can obtain one at https://mozilla.org/MPL/2.0/.
+// Copyright (C) 2024 Ivan Stasiuk <ivan@stasi.uk>.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 
-namespace BrokeYourBike\ProvidusBank;
+namespace BrokeYourBike\ZenithBankCIB;
 
-use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\ClientInterface;
-use BrokeYourBike\ResolveUri\ResolveUriTrait;
-use BrokeYourBike\ZenithBankCIB\Responses\TransactionResponse;
-use BrokeYourBike\ZenithBankCIB\Responses\AccountResponse;
-use BrokeYourBike\ZenithBankCIB\Interfaces\TransactionInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Psr\Http\Client\ClientInterface;
+use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 use BrokeYourBike\ZenithBankCIB\Interfaces\ConfigInterface;
-use BrokeYourBike\HttpEnums\HttpMethodEnum;
-use BrokeYourBike\HttpClient\HttpClientTrait;
-use BrokeYourBike\HttpClient\HttpClientInterface;
-use BrokeYourBike\HasSourceModel\SourceModelInterface;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\User;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\Response;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\FetchRequest;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransQuery;
+use BrokeYourBike\ZenithBankCIB\Gen\SoapClient;
+use BrokeYourBike\ZenithBankCIB\Gen\SoapClassmap;
 use BrokeYourBike\HasSourceModel\HasSourceModelTrait;
 
 /**
  * @author Ivan Stasiuk <ivan@stasi.uk>
  */
-class Client implements HttpClientInterface
+class Client
 {
-    use HttpClientTrait;
-    use ResolveUriTrait;
     use HasSourceModelTrait;
 
     private ConfigInterface $config;
+    private SoapClient $soap;
 
     public function __construct(ConfigInterface $config, ClientInterface $httpClient)
     {
         $this->config = $config;
-        $this->httpClient = $httpClient;
+
+        $httpHandle = HttPlugHandle::createForClient($httpClient);
+
+        $engine = ExtSoapEngineFactory::fromOptionsWithHandler(
+            ExtSoapOptions::defaults($this->config->getWsdl(), [])
+                ->withClassMap(SoapClassmap::getCollection()),
+            $httpHandle
+        );
+
+        $this->soap = new SoapClient($engine, new EventDispatcher());
     }
 
     public function getConfig(): ConfigInterface
@@ -43,94 +52,20 @@ class Client implements HttpClientInterface
         return $this->config;
     }
 
-    public function fetchAccount(string $accountNumber): AccountResponse
+    public function fetch(string $reference): Response
     {
-        $response = $this->performRequest(HttpMethodEnum::POST, 'GetProvidusAccount', ['accountNumber' => $accountNumber]);
-        return new AccountResponse($response);
-    }
+        $user = (new User())
+            ->withCompanyCode($this->config->getCompanyCode())
+            ->withUserID($this->config->getUsername())
+            ->withPassword($this->config->getPassword());
 
-    public function domesticTransfer(TransactionInterface $transaction): TransactionResponse
-    {
-        if ($transaction instanceof SourceModelInterface){
-            $this->setSourceModel($transaction);
-        }
+        $refs = (new ArrayOfTransQuery())
+            ->withTransQuery((new TransQuery())->withTransactionRef($reference));
 
-        $response = $this->performRequest(HttpMethodEnum::POST, 'ProvidusFundTransfer', [
-            'transactionReference' => $transaction->getReference(),
-            'creditAccount' => $this->config->getSourceAccountNumber(),
-            'debitAccount' => $transaction->getBankAccount(),
-            'currencyCode' => $transaction->getCurrencyCode(),
-            'transactionAmount' => $transaction->getAmount(),
-            'narration' => $transaction->getDescription(),
-        ]);
-
-        return new TransactionResponse($response);
-    }
-
-    public function transfer(TransactionInterface $transaction): TransactionResponse
-    {
-        if ($transaction instanceof SourceModelInterface){
-            $this->setSourceModel($transaction);
-        }
-
-        $response = $this->performRequest(HttpMethodEnum::POST, 'NIPFundTransfer', [
-            'transactionReference' => $transaction->getReference(),
-            'narration' => $transaction->getDescription(),
-            'currencyCode' => $transaction->getCurrencyCode(),
-            'transactionAmount' => $transaction->getAmount(),
-            'sourceAccountName' => $this->config->getSourceAccountName(),
-            'beneficiaryAccountName' => $transaction->getRecipientName(),
-            'beneficiaryAccountNumber' => $transaction->getBankAccount(),
-            'beneficiaryBank' => $transaction->getBankCode(),
-        ]);
-
-        return new TransactionResponse($response);
-    }
-
-    public function fetchDomesticTransactionStatus(string $reference): TransactionResponse
-    {
-        $response = $this->performRequest(HttpMethodEnum::POST, 'ProvidusFundTransfer', [
-            'transactionReference' => $reference,
-        ]);
-
-        return new TransactionResponse($response);
-    }
-
-    public function fetchTransactionStatus(string $reference): TransactionResponse
-    {
-        $response = $this->performRequest(HttpMethodEnum::POST, 'GetNIPTransactionStatus', [
-            'transactionReference' => $reference,
-        ]);
-
-        return new TransactionResponse($response);
-    }
-
-    /**
-     * @param HttpMethodEnum $method
-     * @param string $uri
-     * @param array<mixed> $data
-     * @return ResponseInterface
-     */
-    private function performRequest(HttpMethodEnum $method, string $uri, array $data): ResponseInterface
-    {
-        $options = [
-            \GuzzleHttp\RequestOptions::HEADERS => [
-                'Accept' => 'application/json',
-            ],
-        ];
-
-        if ($method === HttpMethodEnum::POST) {
-            $options[\GuzzleHttp\RequestOptions::JSON] = array_merge($data, [
-                'userName' => $this->config->getUsername(),
-                'password' => $this->config->getPassword(),
-            ]);
-        }
-
-        if ($this->getSourceModel()) {
-            $options[\BrokeYourBike\HasSourceModel\Enums\RequestOptions::SOURCE_MODEL] = $this->getSourceModel();
-        }
-
-        $uri = (string) $this->resolveUriFor($this->config->getUrl(), $uri);
-        return $this->httpClient->request($method->value, $uri, $options);
+        return $this->soap->fetchRequest(new FetchRequest(
+            (new QueryReq())
+                ->withClientInfo($user)
+                ->withTransactionReference($refs)
+        ))->getFetchRequestResult();
     }
 }

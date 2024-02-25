@@ -8,11 +8,9 @@
 
 namespace BrokeYourBike\ZenithBankCIB\Tests;
 
+use GuzzleHttp\Client as GuzzleHttpClient;
 use BrokeYourBike\ZenithBankCIB\Interfaces\ConfigInterface;
 use BrokeYourBike\ZenithBankCIB\Client;
-use BrokeYourBike\ResolveUri\ResolveUriTrait;
-use BrokeYourBike\HttpClient\HttpClientTrait;
-use BrokeYourBike\HttpClient\HttpClientInterface;
 use BrokeYourBike\HasSourceModel\HasSourceModelTrait;
 
 /**
@@ -26,29 +24,9 @@ class ClientTest extends TestCase
         /** @var ConfigInterface */
         $mockedConfig = $this->getMockBuilder(ConfigInterface::class)->getMock();
 
-        /** @var \GuzzleHttp\ClientInterface */
-        $mockedHttpClient = $this->getMockBuilder(\GuzzleHttp\ClientInterface::class)->getMock();
+        $api = new Client($mockedConfig, new GuzzleHttpClient());
 
-        $api = new Client($mockedConfig, $mockedHttpClient);
-
-        $this->assertInstanceOf(HttpClientInterface::class, $api);
         $this->assertSame($mockedConfig, $api->getConfig());
-    }
-
-    /** @test */
-    public function it_uses_http_client_trait(): void
-    {
-        $usedTraits = class_uses(Client::class);
-
-        $this->assertArrayHasKey(HttpClientTrait::class, $usedTraits);
-    }
-
-    /** @test */
-    public function it_uses_resolve_uri_trait(): void
-    {
-        $usedTraits = class_uses(Client::class);
-
-        $this->assertArrayHasKey(ResolveUriTrait::class, $usedTraits);
     }
 
     /** @test */

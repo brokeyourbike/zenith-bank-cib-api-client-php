@@ -11,7 +11,8 @@ RUN docker-php-ext-install \
     xml \
     zip \
     bcmath \
-    pcntl
+    pcntl \
+    soap
 
 # disable xdebug
 RUN rm -f /usr/local/etc/php/conf.d/xdebug.ini
