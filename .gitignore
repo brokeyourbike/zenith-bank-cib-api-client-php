@@ -24,3 +24,4 @@ Homestead.json
 .phpunit.result.cache
 composer.lock
 /tests/RTest.php
+.DS_Store
