@@ -81,10 +81,11 @@ class Client
             ->withUserID($this->config->getUsername())
             ->withPassword($this->config->getPassword());
 
+        $mac = hash('sha512', "{$transaction->getReference()}{$transaction->getRecipientBankAccount()}{$transaction->getAmount()}", false);
+
         return $this->soap->sendRequest(new SendRequest(
             (new UploadData())
                 ->withClientInfo($user)
-                ->withUseSingleDebitMultipleCredit(true)
                 ->withTransactionRequest(
                     (new ArrayOfTransaction())->withTransaction((new Transaction())
                         ->withAmount((string)$transaction->getAmount())
@@ -95,6 +96,8 @@ class Client
                         ->withTransactionRef($transaction->getReference())
                         ->withPaymentDueDate($transaction->getDueDate()->format('Y-m-d')))
                 )
+                ->withMAC($mac)
+                ->withUseSingleDebitMultipleCredit(false)
         ))->getSendRequestResult();
     }
 }
