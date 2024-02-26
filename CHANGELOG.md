@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.2.1...v0.2.2) (2024-02-26)
+
+
+### Bug Fixes
+
+* carbon time ([e370eaf](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/e370eaf05e1c6e33bd7d914c0e25524772152cad))
+
 ### [0.2.1](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.2.0...v0.2.1) (2024-02-26)
 
 
