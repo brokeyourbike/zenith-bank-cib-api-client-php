@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.1.0...v0.2.0) (2024-02-26)
+
+
+### Features
+
+* send trx ([cc550e4](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/cc550e492759a724dd272f105e3a8907e7b782fc))
+
 ## 0.1.0 (2024-02-26)
 
 
