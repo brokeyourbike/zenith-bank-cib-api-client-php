@@ -30,12 +30,11 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.1",
-        "brokeyourbike/has-source-model": "^2.0",
         "phpro/soap-client": "^3",
-        "guzzlehttp/psr7": "^2.6",
+        "guzzlehttp/psr7": "^2",
         "guzzlehttp/guzzle": "^7",
-        "php-http/guzzle7-adapter": "^1.0",
-        "php-http/message": "^1.16"
+        "php-http/guzzle7-adapter": "^1",
+        "php-http/message": "^1"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.4",

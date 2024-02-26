@@ -14,24 +14,26 @@ use Phpro\SoapClient\Caller\EventDispatchingCaller;
 use Phpro\SoapClient\Caller\EngineCaller;
 use Http\Adapter\Guzzle7\Client as GuzzleAdapter;
 use GuzzleHttp\ClientInterface;
+use BrokeYourBike\ZenithBankCIB\Interfaces\TransactionInterface;
 use BrokeYourBike\ZenithBankCIB\Interfaces\ConfigInterface;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\User;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\UploadData;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\Transaction;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\TransQuery;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\SendRequest;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\Response;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\QueryReq;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\FetchRequest;
+use BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransaction;
 use BrokeYourBike\ZenithBankCIB\Gen\Type\ArrayOfTransQuery;
 use BrokeYourBike\ZenithBankCIB\Gen\SoapClient;
 use BrokeYourBike\ZenithBankCIB\Gen\SoapClassmap;
-use BrokeYourBike\HasSourceModel\HasSourceModelTrait;
 
 /**
  * @author Ivan Stasiuk <ivan@stasi.uk>
  */
 class Client
 {
-    use HasSourceModelTrait;
-
     private ConfigInterface $config;
     private SoapClient $soap;
 
@@ -70,5 +72,29 @@ class Client
                 ->withClientInfo($user)
                 ->withTransactionReference($refs)
         ))->getFetchRequestResult();
+    }
+
+    public function send(TransactionInterface $transaction): ?Response
+    {
+        $user = (new User())
+            ->withCompanyCode($this->config->getCompanyCode())
+            ->withUserID($this->config->getUsername())
+            ->withPassword($this->config->getPassword());
+
+        return $this->soap->sendRequest(new SendRequest(
+            (new UploadData())
+                ->withClientInfo($user)
+                ->withUseSingleDebitMultipleCredit(true)
+                ->withTransactionRequest(
+                    (new ArrayOfTransaction())->withTransaction((new Transaction())
+                        ->withAmount($transaction->getAmount())
+                        ->withBeneficiaryAccount($transaction->getRecipientBankAccount())
+                        ->withBeneficiaryBankCode($transaction->getRecipientBankCode())
+                        ->withBeneficiaryName($transaction->getRecipientName())
+                        ->withDebitAccount($this->config->getDebitAccount())
+                        ->withTransactionRef($transaction->getAmount())
+                        ->withPaymentDueDate($transaction->getDueDate()->format('')))
+                )
+        ))->getSendRequestResult();
     }
 }

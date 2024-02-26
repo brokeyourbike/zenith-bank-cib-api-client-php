@@ -15,4 +15,5 @@ interface ConfigInterface
     public function getCompanyCode(): string;
     public function getUsername(): string;
     public function getPassword(): string;
+    public function getDebitAccount(): string;
 }

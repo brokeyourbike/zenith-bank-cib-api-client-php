@@ -12,6 +12,9 @@ namespace BrokeYourBike\ZenithBankCIB\Interfaces;
 interface TransactionInterface
 {
     public function getReference(): string;
-    public function getCurrencyCode(): string;
     public function getAmount(): float;
+    public function getRecipientName(): string;
+    public function getRecipientBankCode(): string;
+    public function getRecipientBankAccount(): string;
+    public function getDueDate(): \DateTime;
 }
