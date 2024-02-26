@@ -87,12 +87,12 @@ class Client
                 ->withUseSingleDebitMultipleCredit(true)
                 ->withTransactionRequest(
                     (new ArrayOfTransaction())->withTransaction((new Transaction())
-                        ->withAmount($transaction->getAmount())
+                        ->withAmount((string)$transaction->getAmount())
                         ->withBeneficiaryAccount($transaction->getRecipientBankAccount())
                         ->withBeneficiaryBankCode($transaction->getRecipientBankCode())
                         ->withBeneficiaryName($transaction->getRecipientName())
                         ->withDebitAccount($this->config->getDebitAccount())
-                        ->withTransactionRef($transaction->getAmount())
+                        ->withTransactionRef($transaction->getReference())
                         ->withPaymentDueDate($transaction->getDueDate()->format('')))
                 )
         ))->getSendRequestResult();
