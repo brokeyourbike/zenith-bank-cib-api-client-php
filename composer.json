@@ -47,5 +47,6 @@
             "bamarni/composer-bin-plugin": true,
             "php-http/discovery": false
         }
-    }
+    },
+    "version": "0.1.0"
 }
