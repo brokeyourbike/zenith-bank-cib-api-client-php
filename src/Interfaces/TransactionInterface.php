@@ -16,5 +16,5 @@ interface TransactionInterface
     public function getRecipientName(): string;
     public function getRecipientBankCode(): string;
     public function getRecipientBankAccount(): string;
-    public function getDueDate(): \DateTime;
+    public function getDueDate(): \Carbon\Carbon;
 }
