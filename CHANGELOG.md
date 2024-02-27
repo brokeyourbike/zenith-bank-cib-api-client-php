@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.4](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.2.3...v0.2.4) (2024-02-27)
+
+
+### Bug Fixes
+
+* use UploadData ([1bbaac4](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/1bbaac4b3e5bfee066c88776f1bff7353ab479bf))
+
 ### [0.2.3](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.2.2...v0.2.3) (2024-02-26)
 
 
