@@ -37,66 +37,6 @@ class SoapClient
     }
 
     /**
-     * @param RequestInterface & Type\SendRemitaRequest $parameters
-     * @return ResultInterface & Type\SendRemitaRequestResponse
-     * @throws SoapException
-     */
-    public function sendRemitaRequest(\BrokeYourBike\ZenithBankCIB\Gen\Type\SendRemitaRequest $parameters) : \BrokeYourBike\ZenithBankCIB\Gen\Type\SendRemitaRequestResponse
-    {
-        $response = ($this->caller)('SendRemitaRequest', $parameters);
-
-        \Psl\Type\instance_of(\BrokeYourBike\ZenithBankCIB\Gen\Type\SendRemitaRequestResponse::class)->assert($response);
-        \Psl\Type\instance_of(\Phpro\SoapClient\Type\ResultInterface::class)->assert($response);
-
-        return $response;
-    }
-
-    /**
-     * @param RequestInterface & Type\FetchRemitaRequest $parameters
-     * @return ResultInterface & Type\FetchRemitaRequestResponse
-     * @throws SoapException
-     */
-    public function fetchRemitaRequest(\BrokeYourBike\ZenithBankCIB\Gen\Type\FetchRemitaRequest $parameters) : \BrokeYourBike\ZenithBankCIB\Gen\Type\FetchRemitaRequestResponse
-    {
-        $response = ($this->caller)('FetchRemitaRequest', $parameters);
-
-        \Psl\Type\instance_of(\BrokeYourBike\ZenithBankCIB\Gen\Type\FetchRemitaRequestResponse::class)->assert($response);
-        \Psl\Type\instance_of(\Phpro\SoapClient\Type\ResultInterface::class)->assert($response);
-
-        return $response;
-    }
-
-    /**
-     * @param RequestInterface & Type\SendFXRequest $parameters
-     * @return ResultInterface & Type\SendFXRequestResponse
-     * @throws SoapException
-     */
-    public function sendFXRequest(\BrokeYourBike\ZenithBankCIB\Gen\Type\SendFXRequest $parameters) : \BrokeYourBike\ZenithBankCIB\Gen\Type\SendFXRequestResponse
-    {
-        $response = ($this->caller)('SendFXRequest', $parameters);
-
-        \Psl\Type\instance_of(\BrokeYourBike\ZenithBankCIB\Gen\Type\SendFXRequestResponse::class)->assert($response);
-        \Psl\Type\instance_of(\Phpro\SoapClient\Type\ResultInterface::class)->assert($response);
-
-        return $response;
-    }
-
-    /**
-     * @param RequestInterface & Type\FetchMT103Advise $parameters
-     * @return ResultInterface & Type\FetchMT103AdviseResponse
-     * @throws SoapException
-     */
-    public function fetchMT103Advise(\BrokeYourBike\ZenithBankCIB\Gen\Type\FetchMT103Advise $parameters) : \BrokeYourBike\ZenithBankCIB\Gen\Type\FetchMT103AdviseResponse
-    {
-        $response = ($this->caller)('FetchMT103Advise', $parameters);
-
-        \Psl\Type\instance_of(\BrokeYourBike\ZenithBankCIB\Gen\Type\FetchMT103AdviseResponse::class)->assert($response);
-        \Psl\Type\instance_of(\Phpro\SoapClient\Type\ResultInterface::class)->assert($response);
-
-        return $response;
-    }
-
-    /**
      * @param RequestInterface & Type\FetchBulkDebitRequest $parameters
      * @return ResultInterface & Type\FetchBulkDebitRequestResponse
      * @throws SoapException
