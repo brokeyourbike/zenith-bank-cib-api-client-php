@@ -85,7 +85,6 @@ class Client
 
         return $this->soap->sendRequest(new SendRequest(
             (new UploadData())
-                ->withClientInfo($user)
                 ->withTransactionRequest(
                     (new ArrayOfTransaction())->withTransaction((new Transaction())
                         ->withAmount((string)$transaction->getAmount())
@@ -96,6 +95,7 @@ class Client
                         ->withTransactionRef($transaction->getReference())
                         ->withPaymentDueDate($transaction->getDueDate()->format('Y-m-d')))
                 )
+                ->withClientInfo($user)
                 ->withMAC($mac)
                 ->withUseSingleDebitMultipleCredit(false)
         ))->getSendRequestResult();
