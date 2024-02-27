@@ -93,7 +93,7 @@ class Client
                         ->withBeneficiaryName($transaction->getRecipientName())
                         ->withDebitAccount($this->config->getDebitAccount())
                         ->withTransactionRef($transaction->getReference())
-                        ->withPaymentDueDate($transaction->getDueDate()->format('Y-m-d')))
+                        ->withPaymentDueDate($transaction->getDueDate()->format('d/m/Y')))
                 )
                 ->withClientInfo($user)
                 ->withMAC($mac)
