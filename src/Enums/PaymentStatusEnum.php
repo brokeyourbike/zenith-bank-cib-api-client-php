@@ -11,6 +11,7 @@ namespace BrokeYourBike\ZenithBankCIB\Enums;
  */
 enum PaymentStatusEnum: string
 {
+    case PROCESSED = 'processed';
     case PENDING = 'pending';
     case FAILED = 'Failed';
 }
