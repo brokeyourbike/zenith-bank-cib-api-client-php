@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.4.0...v0.5.0) (2024-03-01)
+
+
+### Features
+
+* processed payment status ([47feaff](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/47feaff080cc5cfcb7435de1d0234f3598a35222))
+
 ## [0.4.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.3.0...v0.4.0) (2024-02-29)
 
 
