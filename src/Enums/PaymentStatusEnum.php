@@ -13,5 +13,5 @@ enum PaymentStatusEnum: string
 {
     case PROCESSED = 'processed';
     case PENDING = 'pending';
-    case FAILED = 'Failed';
+    case FAILED = 'failed';
 }
