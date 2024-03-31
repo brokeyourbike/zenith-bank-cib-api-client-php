@@ -17,6 +17,7 @@ enum ErrorCodeEnum: string
     case ERROR_WHILE_PROCESSING = '22';
     case NO_DATA_FOUND = '25';
     case DATA_INVALID = '35';
+    case INDETERMINATE_RESPONSE = '48';
     case INVALID_REQUEST_IP = '70';
     case WRONG_CREDENTIAL = '60';
     case FAILED_WHILE_CREATING_BATCH = '96';
