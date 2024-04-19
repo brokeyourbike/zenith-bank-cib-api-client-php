@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.5.3...v0.6.0) (2024-04-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* currency from trx
+* debit currency
+
+### Bug Fixes
+
+* currency from trx ([b81a495](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/b81a495a5d6ff13bedc0072dbff979a5d724a3f2))
+* debit currency ([59e6f45](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/59e6f4517c4e33ce92e9e84646b1f4a65a53d653))
+
 ### [0.5.3](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.5.2...v0.5.3) (2024-04-13)
 
 
