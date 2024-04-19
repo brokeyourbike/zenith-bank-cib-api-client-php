@@ -16,5 +16,4 @@ interface ConfigInterface
     public function getUsername(): string;
     public function getPassword(): string;
     public function getDebitAccount(): string;
-    public function getDebitAccountCurrency(): string;
 }

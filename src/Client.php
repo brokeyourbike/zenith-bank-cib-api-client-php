@@ -92,7 +92,7 @@ class Client
                         ->withBeneficiaryBankCode($transaction->getRecipientBankCode())
                         ->withBeneficiaryName($transaction->getRecipientName())
                         ->withDebitAccount($this->config->getDebitAccount())
-                        ->withDebitCurrency($this->config->getDebitAccountCurrency())
+                        ->withDebitCurrency($transaction->getCurrency())
                         ->withTransactionRef($transaction->getReference())
                         ->withPaymentDueDate($transaction->getDueDate()->format('d/m/Y')))
                 )
