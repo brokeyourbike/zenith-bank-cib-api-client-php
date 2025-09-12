@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.6.0...v0.7.0) (2025-09-12)
+
+
+### Features
+
+* routing method ([1b7fbce](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/commit/1b7fbcec6f03bb68c2ae7ef441934a4b046a3e4c))
+
 ## [0.6.0](https://www.github.com/brokeyourbike/zenith-bank-cib-api-client-php/compare/v0.5.3...v0.6.0) (2024-04-19)
 
 
