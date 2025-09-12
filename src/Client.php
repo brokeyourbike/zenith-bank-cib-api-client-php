@@ -88,6 +88,10 @@ class Client
                 ->withTransactionRequest(
                     (new ArrayOfTransaction())->withTransaction((new Transaction())
                         ->withAmount((string)$transaction->getAmount())
+                        ->withPaymentCurrency($transaction->getCurrency())
+                        ->withPaymentMethod('NIP INSTANT')
+                        ->withPaymentType('NIP INSTANT')
+                        ->withRoutingMethod('NIP INSTANT')
                         ->withBeneficiaryAccount($transaction->getRecipientBankAccount())
                         ->withBeneficiaryBankCode($transaction->getRecipientBankCode())
                         ->withBeneficiaryName($transaction->getRecipientName())

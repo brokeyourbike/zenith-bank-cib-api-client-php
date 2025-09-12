@@ -1,16 +1,16 @@
-FROM mcr.microsoft.com/devcontainers/php:0-8.1
+FROM mcr.microsoft.com/vscode/devcontainers/php:8.2
 
 RUN apt-get update && apt-get install -y \
+    libicu-dev \
     libxml2-dev \
-    libxslt-dev
+    libxslt-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # install php extensions
-RUN docker-php-ext-install \
-    xml \
-    xsl \
-    bcmath \
-    intl \
-    soap
+RUN docker-php-ext-install bcmath
+RUN docker-php-ext-install intl
+RUN docker-php-ext-install soap
+RUN docker-php-ext-install xsl
 
 # disable xdebug
 RUN rm -f /usr/local/etc/php/conf.d/xdebug.ini
