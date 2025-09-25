@@ -83,6 +83,11 @@ class Client
 
         $mac = hash('sha512', "{$transaction->getReference()}{$transaction->getRecipientBankAccount()}{$transaction->getAmount()}", false);
 
+        $paymentType = match($transaction->getRecipientBankCode()) {
+            '057' => 'ZENITH/BENEFICIARY',
+            default => 'NIP INSTANT'
+        };
+
         return $this->soap->sendRequest(new SendRequest(
             (new UploadData())
                 ->withTransactionRequest(
@@ -90,8 +95,7 @@ class Client
                         ->withAmount((string)$transaction->getAmount())
                         ->withPaymentCurrency($transaction->getCurrency())
                         ->withPaymentMethod('NIP INSTANT')
-                        ->withPaymentType('NIP INSTANT')
-                        ->withRoutingMethod('NIP INSTANT')
+                        ->withPaymentType($paymentType)
                         ->withBeneficiaryAccount($transaction->getRecipientBankAccount())
                         ->withBeneficiaryBankCode($transaction->getRecipientBankCode())
                         ->withBeneficiaryName($transaction->getRecipientName())
