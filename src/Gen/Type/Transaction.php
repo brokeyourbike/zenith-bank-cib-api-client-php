@@ -107,11 +107,6 @@ class Transaction
     /**
      * @var null | string
      */
-    private ?string $RoutingMethod;
-
-    /**
-     * @var null | string
-     */
     private ?string $Payment_Due_Date;
 
     /**
@@ -515,26 +510,6 @@ class Transaction
     {
         $new = clone $this;
         $new->PaymentType = $PaymentType;
-
-        return $new;
-    }
-
-    /**
-     * @return null | string
-     */
-    public function getRoutingMethod() : ?string
-    {
-        return $this->RoutingMethod;
-    }
-
-    /**
-     * @param null | string $RoutingMethod
-     * @return static
-     */
-    public function withRoutingMethod(?string $RoutingMethod) : static
-    {
-        $new = clone $this;
-        $new->RoutingMethod = $RoutingMethod;
 
         return $new;
     }
